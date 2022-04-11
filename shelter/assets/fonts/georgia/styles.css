@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'georgia';
+  src: url(/shelter/assets/fonts/georgia/georgia.eot);
+  src: url(/shelter/assets/fonts/georgia/georgia.eot?#iefix) format('embedded-opentype'),
+       url(/shelter/assets/fonts/georgia/georgia.otf) format('otf'),
+       url(/shelter/assets/fonts/georgia/georgia.ttf) format('truetype'),
+       url(/shelter/assets/fonts/georgia/georgia.woff2) format('woff2');
+}
