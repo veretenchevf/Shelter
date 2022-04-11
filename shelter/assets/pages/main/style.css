@@ -9,10 +9,10 @@
     font-family: "arial";
     font-style: normal;
     font-weight: 400;
-    src: url(//shelter/assets/fonts/arial/arial.eot);
+    src: url(../../fonts/arial/arial.eot);
     src: 
     /* url(//shelter/assets/fonts/arial/arial.eot?#iefix) format('embedded-opentype'), */
-         url(//shelter/assets/fonts/arial/arial) format('otf')
+         url(../../fonts/fonts/arial/arial) format('otf')
          /* url(//shelter/assets/fonts/arial/arial) format('truetype'),
          url(//shelter/assets/fonts/arial/arial.woff2) format('woff2'); */
   }
@@ -20,10 +20,10 @@
     font-family: "georgia";
     font-style: normal;
     font-weight: 400;
-    src: url(/shelter/assets/fonts/georgia/georgia.eot);
+    src: url(../../fonts/fonts/georgia/georgia.eot);
     src: 
-    /* url(/shelter/assets/fonts/georgia/georgia.eot?#iefix) format('embedded-opentype'), */
-         url(/shelter/assets/fonts/georgia/georgia) format('otf'),
+    /* url(../../fonts/fonts/georgia/georgia.eot?#iefix) format('embedded-opentype'), */
+         url(../../fonts/fonts/georgia/georgia) format('otf'),
          /* url(/shelter/assets/fonts/georgia/georgia) format('truetype'),
          url(/shelter/assets/fonts/georgia/georgia.woff2) format('woff2'); */
   }
@@ -32,7 +32,7 @@
 /* Сейчас будет больно глазкам, но у меня не было времени всё делать как следует. Когда уволюсь - всё изменится)). А пока удачи нам всем и хорошего дня) */
 
 .headersection {
-    background-image: url('/shelter/assets/images/start-screen-gradient-background.png');
+    background-image: url('../../images/start-screen-gradient-background.png');
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -467,7 +467,7 @@ margin-left: 30px;
    }
    /* Footer */
    .footer-section {
-       background-image: url(/shelter/assets/images/footer-gradient-background.png);
+       background-image: url(../../images/footer-gradient-background.png);
        background-size: cover;
        display: flex;
        justify-content: center;
