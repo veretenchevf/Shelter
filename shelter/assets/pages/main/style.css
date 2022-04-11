@@ -243,6 +243,7 @@ color: #545454;
     border: 2px solid #F1CDB3;
     box-sizing: border-box;
     border-radius: 100px;
+    margin-bottom: 60px
 }
 .slider_arrow_left:hover {
     background: #FDDCC4;
@@ -259,7 +260,8 @@ color: #545454;
     border: 2px solid #F1CDB3;
     box-sizing: border-box;
     border-radius: 100px;
-    transform: rotate(180deg)
+    transform: rotate(180deg);
+    margin-bottom: 60px
 }
 .slider_arrow_right:hover {
     background: #FDDCC4;
@@ -357,7 +359,7 @@ color: #292929;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 
     
 }
