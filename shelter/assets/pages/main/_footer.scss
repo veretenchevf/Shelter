@@ -1,0 +1,69 @@
+.footer {
+    background-image: url(../../images/footer-gradient-background.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    &__block {
+        width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        div{
+            width: 23vw;
+            height: 240px;
+            max-width: 295px;
+            display:flex;
+            flex-direction: column;
+            margin-top: 16px;
+        }
+        h2 {
+            font-family: 'georgia', serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 35px;
+            line-height: 130%;
+            letter-spacing: 0.06em;
+            color: #FFFFFF;
+        }
+    }   
+    div &__info {
+        display: flex;
+        flex-direction: row;
+        align-self: flex-start;
+        margin-top: 33px;
+        a {
+            font-family: 'georgia', serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 115%;
+            letter-spacing: 0.06em;
+            color: #F1CDB3;
+            margin-left: 20px;
+            align-self: center;
+        }
+        img {
+            width: 40px;
+            
+        }
+    }
+    &__location {
+        margin-left: -19px;
+        div {
+            img {
+                width: 22px;
+            }
+            a {
+                font-family: 'georgia', serif;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 115%;
+                letter-spacing: 0.06em;
+                color: #F1CDB3;
+                margin-left: 20px;
+                align-self: center;
+            }
+        }
+    }
+}

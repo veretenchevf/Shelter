@@ -1,0 +1,81 @@
+.donation {
+    background-color: #F6F6F6;
+    display: flex;
+    &__block {
+        margin: 0px auto 10px auto;
+        width: 1200px;
+        display: flex;
+        align-self: center;
+        justify-content: center; 
+        padding-top: 95px;
+        padding-bottom: 90px;
+    }
+    &__dog{
+        max-height: 262px;
+    }
+    &__disc {
+        width: 380px;
+        margin-left: 30px;
+    }
+    &__header {
+        width: 300px;
+        height: 90px;
+        font-family: 'georgia', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 44px;
+        align-self: flex-start;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-top: -9px;
+        margin-bottom: 18px;
+    }
+    &__bank {
+        float: right;
+        width: 380px;
+        height: 17px;
+        font-family: 'georgia', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+        margin-bottom: 20px;
+    }
+    &__bank-number {
+        padding: 10px 15px;
+        width: 350px;
+        height: 43px;
+        background: #F1CDB3;
+        border-radius: 9px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__bank-card-number {
+        display: flex;
+        justify-content: space-evenly;
+        height: 23px;
+        font-family: 'georgia', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        align-items: center;
+        letter-spacing: 0.06em;
+        color: #545454;
+    }
+    &__disc-text {
+        height: 72px;
+        font-family: 'arial', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #B2B2B2;
+    }
+}

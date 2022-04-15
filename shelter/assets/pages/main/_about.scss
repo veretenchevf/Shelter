@@ -1,0 +1,43 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about {
+    width: 1200px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    &__text {
+        width: 430px;
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 120px;
+    }
+    &__h2 {
+        width: 370px;
+        height: 90px;
+        font-family: 'georgia', serif;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        font-weight: 400;  
+        margin-top: 13px; 
+        margin-bottom: 20px;
+    }
+    &__p {
+        width: 430px;
+        height: 96px;
+        font-family: 'arial', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 24px;
+        color: #4C4C4C;
+        margin-bottom: 19px;
+        margin-top: 5px;
+    }
+}

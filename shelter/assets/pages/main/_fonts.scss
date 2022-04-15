@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: "arial";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../fonts/arial/arial.eot);
+    src: url(../../fonts/fonts/arial/arial) format('otf')
+}
+@font-face {
+    font-family: "georgia";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../../fonts/fonts/georgia/georgia.eot);
+    src: url(../../fonts/fonts/georgia/georgia) format('otf'),
+}
