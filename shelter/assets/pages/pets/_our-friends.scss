@@ -1,0 +1,116 @@
+.our-friends {
+    background: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__header {
+        width: 400px;
+        height: 90px;
+        font-family: 'georgia', serif;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #545454;
+        font-weight: 400;  
+        margin-top: 80px; 
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    &__catalogue {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 30px;
+        grid-column-gap: 40px;
+        margin-bottom: 60px;
+    }
+    &__pagination-buttons{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 100px;
+    }
+    &__page-btn{
+        width: 52px;
+        height: 52px;
+        border: 2px solid #F1CDB3;
+        border-radius: 100px;
+            &__prev, 
+            &__start {
+                color: #cdcdcd;
+                border: 2px solid #cdcdcd;
+            }
+        &__.active{
+            border: 2px solid #F1CDB3;
+            background-color: #F1CDB3;
+        }
+        .prev, 
+        .start {
+            color: #cdcdcd;
+            border: 2px solid #cdcdcd;
+        }
+    }
+}
+.our-friends__animal-card {
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0px 1px 35px 5px;
+        transition: 0.5s;
+        button{
+            cursor: pointer;
+            background:#F1CDB3;
+        }
+    }
+    p {
+        margin: 30px auto ;
+        width: 74px;
+        height: 23px;
+        font-family: 'georgia', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.06em;
+        color: #545454;
+    }
+    button {
+        width: 187px;
+        height: 52px;
+        border-radius: 100px;
+        border: 2px solid #F1CDB3;
+        background:#F6F6F6;
+        font-family: 'georgia', serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #292929;
+    }
+}
+button{
+    background: none;
+    cursor: pointer;
+    &.prev, 
+    &.start {
+        color: #cdcdcd;
+        border: 2px solid #cdcdcd;
+    }
+    &[disabled]{
+        cursor: not-allowed;
+    }
+    &:not([disabled]):hover{
+        background-color: #F1CDB3;
+        }
+    &.active{
+        border: 2px solid #F1CDB3;
+        background-color: #F1CDB3;
+    }
+}   
