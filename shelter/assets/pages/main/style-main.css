@@ -82,6 +82,9 @@ nav a:hover {
   border-bottom: 3px solid #F1CDB3;
   transition: 0.1s;
 }
+nav__nav-field {
+  display: none;
+}
 
 .active {
   border-bottom: 3px solid #F1CDB3;
@@ -671,8 +674,42 @@ div .footer__info img {
     margin-bottom: 47px;
   }
   .header-section__header {
-    margin: 30px 50px 0 10px;
-    width: 100vw;
+    margin: 30px 0 0 0;
+    width: 98vw;
+    padding: 0px 0 0 10px;
+    z-index: 2;
+    justify-content: end;
+  }
+  .header-section__logo-block {
+    margin-right: 40px;
+    margin-left: auto;
+  }
+  .header-section__nav-field {
+    width: 30px;
+    height: 0px;
+    margin-right: 45px;
+    margin-top: 19px;
+    transition: 0.3s;
+  }
+  .header-section__nav-field.open {
+    transform: rotate(90deg);
+    transition: 0.3s;
+    margin-right: 37px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+  .header-section__nav-field span {
+    position: absolute;
+    display: block;
+    background-color: #F1CDB3;
+    width: 30px;
+    height: 2px;
+  }
+  .header-section__nav-field span:first-of-type {
+    margin-top: 10px;
+  }
+  .header-section__nav-field span:last-of-type {
+    margin-top: 20px;
   }
   .header-section__start-screen {
     width: 100vw;
@@ -714,37 +751,30 @@ div .footer__info img {
   }
 
   nav {
-    display: none;
-  }
-
-  nav.burger {
-    display: block;
-    position: relative;
-    width: 30px;
-    height: 30px;
-    margin-top: 14px;
-  }
-  nav.burger::before, nav.burger::after {
-    content: "";
-    background-color: #F1CDB3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0;
+    background-color: #292929;
+    width: 320px;
+    margin: 0;
+    right: -100%;
+    height: 823px;
+    top: 0px;
+    z-index: -1;
+    transition: 0.3s;
   }
-  nav.burger::before {
-    top: 5px;
+  nav li {
+    margin: 20px 0;
   }
-  nav.burger::after {
-    bottom: 3px;
+  nav li a {
+    margin-left: 0;
+    font-size: 32px;
+    padding-bottom: 7px;
   }
-  nav.burger span {
-    position: absolute;
-    background-color: #F1CDB3;
-    width: 100%;
-    height: 2px;
-    left: 0;
-    top: 15px;
+  nav.open {
+    right: 0px;
+    transition: 0.3s;
   }
 
   .about {
@@ -784,7 +814,7 @@ div .footer__info img {
 
   .our-friends__block {
     width: 300px;
-    margin: 42px auto 0 auto;
+    margin: 42px 0 0 0;
   }
   .our-friends__block__button {
     margin-top: -17px;
