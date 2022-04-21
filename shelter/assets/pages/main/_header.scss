@@ -55,6 +55,9 @@ nav {
         border-bottom: 3px solid #F1CDB3;
         transition: 0.1s;
     }
+    &__nav-field{
+        display: none;
+    }
 }
 .active {
     border-bottom: 3px solid #F1CDB3;

@@ -7,4 +7,3 @@ e.preventDefault();
 nav.classList.toggle("open");
 humb.classList.toggle("open");
 };
-

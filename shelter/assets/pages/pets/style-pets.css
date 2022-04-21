@@ -335,8 +335,63 @@ div .footer__info img {
     width: 100vw;
     padding: 30px 10px;
   }
+  .headersection__logo-block {
+    margin-right: 39px;
+    margin-left: auto;
+  }
+  .headersection__nav-field {
+    width: 30px;
+    height: 30px;
+    margin-right: 45px;
+    margin-top: 19px;
+    transition: 0.3s;
+  }
+  .headersection__nav-field.open {
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+  .headersection__nav-field span {
+    position: absolute;
+    display: block;
+    background-color: #000000;
+    width: 30px;
+    height: 2px;
+  }
+  .headersection__nav-field span:first-of-type {
+    margin-top: 10px;
+  }
+  .headersection__nav-field span:last-of-type {
+    margin-top: 20px;
+  }
   .headersection nav {
-    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #fff;
+    width: 320px;
+    margin: 0;
+    right: -100%;
+    height: 823px;
+    top: 0px;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  .headersection nav li {
+    margin: 20px 0;
+  }
+  .headersection nav li a {
+    margin-left: 0;
+    font-size: 32px;
+    padding-bottom: 7px;
+    color: #000000;
+  }
+  .headersection nav.open {
+    right: 0px;
+    transition: 0.3s;
+  }
+  .headersection .active {
+    border-bottom: 3px solid #000000;
   }
 
   .our-friends__header {
