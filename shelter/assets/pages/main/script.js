@@ -1,4 +1,5 @@
-// alert('Првиет, друг) не оставайся при фидбэке инкогнито, пожалуйста) вообще ничего не успеваю с работой своей( я доделаю до дедлайна кросс-чека и перепроверишь) спасибо и удачи нам!))')
+
+alert('Првиет, друг) не оставайся при фидбэке инкогнито, пожалуйста) вообще ничего не успеваю с работой своей( я доделаю до дедлайна кросс-чека и перепроверишь, если не против) спасибо и удачи нам!))')
 const catalogue = [
     {
       "name": "Jennifer",
@@ -106,6 +107,11 @@ log(slider)
 //header
 HUMB.addEventListener('click', navAppearence);
 
+const humb = document.querySelector("#humb");
+const nav = document.querySelector("#nav");
+humb.addEventListener('click', navAppearence);
+
+
 function navAppearence(e){
 e.preventDefault();
 NAV.classList.toggle("open");
@@ -142,6 +148,7 @@ const toTheRight = () => {
     BTN_LEFT.removeEventListener('click', toTheLeft);
     BTN_RIGHT.removeEventListener('click', toTheRight)
 };
+
 
 BTN_LEFT.addEventListener('click', toTheLeft);
 BTN_RIGHT.addEventListener('click', toTheRight);
@@ -257,6 +264,4 @@ SLIDER.addEventListener('animationend', (animationEvent) => {
     }
 }
 )
-
-// SLIDER.addEventListener('animationend', toTheRight)
 
