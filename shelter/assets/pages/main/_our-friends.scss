@@ -49,14 +49,18 @@
         }
         &__slider-block {
             display: flex;
+            flex-direction: row;
             max-width: 1200px;
+            gap: 53px;
+            justify-content: space-evenly;
         }
         &__slider {
             width: 1200px;
             display: flex;
-            justify-content: space-between;
-            padding: 0 53px;
+            flex-direction: row;
             margin-bottom: 60px;
+            position: relative;
+            left:-990px;
         }
         &__arrow-left {
             display: flex;
@@ -103,7 +107,7 @@
             align-items: center;
             &:hover {
                 cursor: pointer;
-                box-shadow: 0px 1px 35px 5px;
+                box-shadow: 0px 1px 5px 5px #F1CDB3 inset;
                 transition: 0.5s;
                 button{
                     cursor: pointer;
@@ -137,4 +141,38 @@
                 color: #292929;
             }
         }
+}
+.slider-wrapper{
+    width: 990px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+.card-template{
+    width: 990px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 90px;
+    position: relative;
+    left: 0px;
+}
+// animation-carousel
+@keyframes move-left {
+    from {left: -990px;};
+    to{left: 0px};
+}
+.transition-left{
+    animation-name: move-left;
+    animation-duration: 1s;
+}
+
+@keyframes move-right {
+    from {left: -990px;};
+    to{left: -1980px};
+}
+.transition-right{
+    animation-name: move-right;
+    animation-duration: 1s;
 }
