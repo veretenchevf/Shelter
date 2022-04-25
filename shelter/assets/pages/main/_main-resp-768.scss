@@ -57,16 +57,18 @@
         }
         &__slider-block {
             display: flex;
-            justify-content: space-evenly;
-            gap: 14px
+            justify-content: space-between;
+            width: 708px;
+            gap: 12px;
         }
         &__slider {
-            width: 75vw;
-            overflow: hidden;
+            width: 580px;
             padding: 0;
+            position: relative;
+            left: -580px;
         }
         &__animal-card{
-            margin-right: 37px;
+            margin-right: 0px;
         }
     }
     .help {
@@ -136,5 +138,40 @@
                 }
             }
         }
+    }
+    .slider-wrapper{
+        width: 580px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        // left: 0px;
+    }
+    .card-template{
+        width: 580px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+        left: 0px;  
+    }
+    // animation-carousel
+    @keyframes move-left {
+        from {left: -580px;};
+        to{left: 0px};
+    }
+    .transition-left{
+        animation-name: move-left;
+        animation-duration: 1s;
+    }
+    
+    @keyframes move-right {
+        from {left: -580px;};
+        to{left: -1160px};
+    }
+    .transition-right{
+        animation-name: move-right;
+        animation-duration: 1s;
     }
 }

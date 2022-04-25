@@ -1,12 +1,42 @@
 @media (max-width: 767px) {
     .header-section {   
+        overflow: hidden;
+        position: relative;
         margin-bottom: 47px;    
         &__header {
+            overflow: hidden;
             margin:30px 0 0 0;
-            width: 98vw;
+            width: 100vw;
             padding: 0px 0 0 10px;
             z-index: 2;
             justify-content: end;
+            nav {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                background-color: #292929;
+                width: 320px;
+                margin: 0;
+                right: -320px;
+                height: 823px;
+                top:0px;
+                z-index: -1;
+                transition: 0.3s;
+                    li {
+                        margin: 20px 0;
+                        
+                        a {
+                            margin-left: 0;
+                            font-size: 32px;
+                            padding-bottom: 7px;
+                        }
+                    }
+                    &.open{
+                        right: 0px;
+                        transition: 0.3s;
+                    }
+            }
         }
         &__logo-block{
             margin-right: 40px;
@@ -18,12 +48,9 @@
                     margin-right: 45px;
                     margin-top: 19px;
                     transition: 0.3s;
-                    .open{
+                    &.open{
                         transform: rotate(90deg); 
                         transition: 0.3s;
-                        margin-right: 37px;
-                        margin-left: 10px;
-                        margin-top: 30px;
                     }
             span {
                 position: absolute;
@@ -77,33 +104,7 @@
                 margin-top: 15px;
             }
         }
-    }
-    nav {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        background-color: #292929;
-        width: 320px;
-        margin: 0;
-        right: -100%;
-        height: 823px;
-        top:0px;
-        z-index: -1;
-        transition: 0.3s;
-            li {
-                margin: 20px 0;
-                
-                a {
-                    margin-left: 0;
-                    font-size: 32px;
-                    padding-bottom: 7px;
-                }
-            }
-            &.open{
-                right: 0px;
-                transition: 0.3s;
-            }
+        
     }
     .about {
         width: 300px;
@@ -158,17 +159,16 @@
             display: flex;
             flex-direction: column;
             width: 270px;
-            
         }
         &__slider {
             width: 270px;
             height: 435px;
             display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            flex-direction: row;
             padding: 0;
             margin-bottom:0;
-            order: 1
+            position: relative;
+            left: -270px;
         }
         &__arrow-left {
             position: relative;
@@ -183,7 +183,7 @@
             order: 3;
             margin-bottom: 0;
             margin-top: -62px;
-            }   
+            }  
         &__animal-card:hover {
             box-shadow: none;
         }
@@ -332,5 +332,44 @@
         width: 260px;
         margin-left: 29px;
         margin-top: 22px;
+    }
+    .slider-wrapper{
+        width: 270px;
+        position: relative;
+        display: flex;
+    }
+    .card-template{
+        width: 270px;
+    }
+    // animation-carousel
+    @keyframes move-left {
+        from {left: -270px;};
+        to{left: 0px};
+    }
+    .transition-left{
+        animation-name: move-left;
+        animation-duration: 1s;
+    }
+    
+    @keyframes move-right {
+        from {left: -270px;};
+        to{left: -540px};
+    }
+    .transition-right{
+        animation-name: move-right;
+        animation-duration: 1s;
+    }
+}
+.body-hidden{
+    overflow: hidden;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(41, 41, 41, 0.6);
+        z-index: 1;
     }
 }

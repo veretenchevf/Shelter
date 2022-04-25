@@ -20,10 +20,10 @@
                 <span class="bar"></span>
             </div>
             <nav id="nav" class="">
-                <li><a class="active" href="">About the shelter</a></li>
-                <li><a href="../../pages/pets/index.html">Our pets</a></li>
-                <li><a href="#help">Help the shelter</a></li>
-                <li><a href="#footer">Contacts</a></li>
+                <li><a data-id="nav-li" class="active" href="">About the shelter</a></li>
+                <li><a data-id="nav-li" href="../../pages/pets/index.html">Our pets</a></li>
+                <li><a data-id="nav-li" href="#help">Help the shelter</a></li>
+                <li><a data-id="nav-li" href="#footer">Contacts</a></li>
             </nav>
         </header>
         <div class="header-section__start-screen">
@@ -50,25 +50,21 @@
             <div class="our-friends__block">
                 <h2 class="our-friends__header">Our friends who<br> are looking for a house</h2>
                 <div class="our-friends__slider-block">
-                    <img class="our-friends__arrow-left" src="../../icons/Arrow.png" alt="arrow left">
-                    <div class="our-friends__slider">
-                        <div class="our-friends__animal-card">
-                            <img src="../../images/pets-katrine.png" alt="katrine">
-                            <p>Katrine</p>
-                            <button>Learn more</button>
-                        </div>
-                        <div class="our-friends__animal-card">
-                            <img src="../../images/pets-jennifer.png" alt="jennifer">
-                            <p>Jennifer</p>
-                            <button>Learn more</button>
-                        </div>
-                        <div class="our-friends__animal-card">
-                            <img src="../../images/pets-woody.png" alt="woody">
-                            <p>Woody</p>
-                            <button>Learn more</button>
+                    <img class="our-friends__arrow-left" src="../../icons/Arrow.png" alt="arrow left" id="btn-left">
+                    <div class="slider-wrapper">
+                        <div class="our-friends__slider" id="slider">
+                            <div class="card-template" id="template-left">
+                                <!-- / -->
+                            </div>
+                            <div class="card-template" id="template-active">
+                                <!--  -->
+                            </div>
+                            <div class="card-template" id="template-right">
+                                <!--  -->
+                            </div>
                         </div>
                     </div>
-                    <img class="our-friends__arrow-right" src="../../icons/Arrow.png" alt="arrow right">
+                    <img class="our-friends__arrow-right" src="../../icons/Arrow.png" alt="arrow right" id="btn-right">
                 </div>
                 <button class="our-friends__block__button"><a href="../pets/index.html">Get to know the rest</a></button>
             </div>

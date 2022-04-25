@@ -248,14 +248,18 @@ main {
 }
 .our-friends__slider-block {
   display: flex;
+  flex-direction: row;
   max-width: 1200px;
+  gap: 53px;
+  justify-content: space-evenly;
 }
 .our-friends__slider {
   width: 1200px;
   display: flex;
-  justify-content: space-between;
-  padding: 0 53px;
+  flex-direction: row;
   margin-bottom: 60px;
+  position: relative;
+  left: -990px;
 }
 .our-friends__arrow-left {
   display: flex;
@@ -303,7 +307,7 @@ main {
 }
 .our-friends__animal-card:hover {
   cursor: pointer;
-  box-shadow: 0px 1px 35px 5px;
+  box-shadow: 0px 1px 5px 5px #F1CDB3 inset;
   transition: 0.5s;
 }
 .our-friends__animal-card:hover button {
@@ -335,6 +339,50 @@ main {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+}
+
+.slider-wrapper {
+  width: 990px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.card-template {
+  width: 990px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 90px;
+  position: relative;
+  left: 0px;
+}
+
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0px;
+  }
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1s;
 }
 
 .help {
@@ -593,16 +641,18 @@ div .footer__info img {
   }
   .our-friends__slider-block {
     display: flex;
-    justify-content: space-evenly;
-    gap: 14px;
+    justify-content: space-between;
+    width: 708px;
+    gap: 12px;
   }
   .our-friends__slider {
-    width: 75vw;
-    overflow: hidden;
+    width: 580px;
     padding: 0;
+    position: relative;
+    left: -580px;
   }
   .our-friends__animal-card {
-    margin-right: 37px;
+    margin-right: 0px;
   }
 
   .help {
@@ -668,17 +718,90 @@ div .footer__info img {
   .footer__location div img {
     width: 22px;
   }
+
+  .slider-wrapper {
+    width: 580px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .card-template {
+    width: 580px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    left: 0px;
+  }
+
+  @keyframes move-left {
+    from {
+      left: -580px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 1s;
+  }
+
+  @keyframes move-right {
+    from {
+      left: -580px;
+    }
+    to {
+      left: -1160px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 1s;
+  }
 }
 @media (max-width: 767px) {
   .header-section {
+    overflow: hidden;
+    position: relative;
     margin-bottom: 47px;
   }
   .header-section__header {
+    overflow: hidden;
     margin: 30px 0 0 0;
-    width: 98vw;
+    width: 100vw;
     padding: 0px 0 0 10px;
     z-index: 2;
     justify-content: end;
+  }
+  .header-section__header nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #292929;
+    width: 320px;
+    margin: 0;
+    right: -320px;
+    height: 823px;
+    top: 0px;
+    z-index: -1;
+    transition: 0.3s;
+  }
+  .header-section__header nav li {
+    margin: 20px 0;
+  }
+  .header-section__header nav li a {
+    margin-left: 0;
+    font-size: 32px;
+    padding-bottom: 7px;
+  }
+  .header-section__header nav.open {
+    right: 0px;
+    transition: 0.3s;
   }
   .header-section__logo-block {
     margin-right: 40px;
@@ -686,7 +809,7 @@ div .footer__info img {
   }
   .header-section__nav-field {
     width: 30px;
-    height: 0px;
+    height: 30px;
     margin-right: 45px;
     margin-top: 19px;
     transition: 0.3s;
@@ -694,9 +817,6 @@ div .footer__info img {
   .header-section__nav-field.open {
     transform: rotate(90deg);
     transition: 0.3s;
-    margin-right: 37px;
-    margin-left: 10px;
-    margin-top: 30px;
   }
   .header-section__nav-field span {
     position: absolute;
@@ -748,33 +868,6 @@ div .footer__info img {
     align-self: center;
     margin: 0;
     margin-top: 15px;
-  }
-
-  nav {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    background-color: #292929;
-    width: 320px;
-    margin: 0;
-    right: -100%;
-    height: 823px;
-    top: 0px;
-    z-index: -1;
-    transition: 0.3s;
-  }
-  nav li {
-    margin: 20px 0;
-  }
-  nav li a {
-    margin-left: 0;
-    font-size: 32px;
-    padding-bottom: 7px;
-  }
-  nav.open {
-    right: 0px;
-    transition: 0.3s;
   }
 
   .about {
@@ -834,11 +927,11 @@ div .footer__info img {
     width: 270px;
     height: 435px;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    flex-direction: row;
     padding: 0;
     margin-bottom: 0;
-    order: 1;
+    position: relative;
+    left: -270px;
   }
   .our-friends__arrow-left {
     position: relative;
@@ -1003,6 +1096,55 @@ div .footer__info img {
     margin-left: 29px;
     margin-top: 22px;
   }
+
+  .slider-wrapper {
+    width: 270px;
+    position: relative;
+    display: flex;
+  }
+
+  .card-template {
+    width: 270px;
+  }
+
+  @keyframes move-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 1s;
+  }
+
+  @keyframes move-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
+  }
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 1s;
+  }
+}
+.body-hidden {
+  overflow: hidden;
+}
+.body-hidden:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(41, 41, 41, 0.6);
+  z-index: 1;
 }
 
 /*# sourceMappingURL=style-main.css.map */
