@@ -174,4 +174,40 @@
         animation-name: move-right;
         animation-duration: 1s;
     }
+    .modal-block{
+        width: 630px;
+        height: 350px;
+        }
+        .modal{
+            &__pic{
+                width: 350px;
+                height: 350px;
+            }
+        }
+        
+        .discBlock{
+            width: 100%;
+            margin: 10px 9px 37px 11px;
+
+            &__name{
+                font-size: 35px;
+            }
+            &__type{
+                margin-top: -20px;
+                font-size: 20px;
+            }
+            &__disc{
+                font-size: 13px;
+            }
+            &__details{
+                margin-left: 20px;
+            }
+            &__li{
+                margin-top: 5px;
+                &::marker{
+                    color: #F1CDB3;
+                }
+            }
+            
+        }
 }

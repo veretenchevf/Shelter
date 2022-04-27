@@ -1,5 +1,3 @@
-
-alert('Првиет, друг) не оставайся при фидбэке инкогнито, пожалуйста) вообще ничего не успеваю с работой своей( я доделаю до дедлайна кросс-чека и перепроверишь, если не против) спасибо и удачи нам!))')
 const catalogue = [
     {
       "name": "Jennifer",
@@ -102,15 +100,12 @@ const BTN_RIGHT = document.querySelector('#btn-right');
 const TMPLT_LEFT = document.querySelector('#template-left');
 const TMPLT_ACTIVE = document.querySelector('#template-active');
 const TMPLT_RIGHT = document.querySelector('#template-right');
-log(slider)
+const MODAL = document.querySelector('#modal');
+const CARD = document.querySelector('#animal-card');
+const CLOSE_BTN = document.querySelector('.modal__close-btn');
 
 //header
 HUMB.addEventListener('click', navAppearence);
-
-const humb = document.querySelector("#humb");
-const nav = document.querySelector("#nav");
-humb.addEventListener('click', navAppearence);
-
 
 function navAppearence(e){
 e.preventDefault();
@@ -127,7 +122,7 @@ LIS.forEach(li => li.addEventListener('click', () => {
     })
 )
 BODY.addEventListener('click', (e) => {
-    if(BODY.classList.contains('body-hidden') && e.target !== nav){
+    if(BODY.classList.contains('body-hidden') && e.target !== NAV){
         NAV.classList.remove("open");
         HUMB.classList.remove("open");
         BODY.classList.toggle('body-hidden');
@@ -155,7 +150,6 @@ BTN_RIGHT.addEventListener('click', toTheRight);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    // debugger
     if(window.matchMedia("(min-width: 1280px)").matches){
             let animalCard1 = createCard();
             let animalCard2 = createCard();
@@ -190,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
             TMPLT_RIGHT.appendChild(animalCard5);
             TMPLT_RIGHT.appendChild(animalCard6);
         }else if(window.matchMedia("(min-width: 320px)").matches){
-            log('asdasd')
             let animalCard1 = createCard();
             TMPLT_LEFT.appendChild(animalCard1);
             let animalCard2 = createCard();
@@ -200,14 +193,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, {once: true}
 )
-const createCard = () => {
+
+
+function createCard(e) {
     let pet = newCatalogue[Math.floor(Math.random() * (newCatalogue.length - 0) + 0)];
     let card = document.createElement('div');
+    card.addEventListener('click', popup);
+    card.addEventListener('click', createModal);
+    card.setAttribute('id', 'animal-card');
     card.classList.add('our-friends__animal-card');
+    card.setAttribute("data-name", `${pet.name}`);
     let cardPic = `<img src="${pet.img}" alt="${pet.name}">`;
     let cardName = `<p>${pet.name}</p>`;
     let cardBtn = `<button>Learn more</button>`;
-    card.innerHTML = `${cardPic}${cardName}${cardBtn}`
+    card.innerHTML = `${cardPic}${cardName}${cardBtn}`;
     return card
 }
 
@@ -217,6 +216,11 @@ SLIDER.addEventListener('animationend', (animationEvent) => {
         let leftTemplate = TMPLT_LEFT.innerHTML;
         TMPLT_ACTIVE.innerHTML = leftTemplate;
         TMPLT_LEFT.innerHTML = '';
+        let arrToEvent = Array.from(TMPLT_ACTIVE.children);
+        arrToEvent.forEach(function(child) {
+            child.addEventListener('click', popup);
+            child.addEventListener('click', createModal)
+        })
         if(window.matchMedia("(min-width: 1280px)").matches){
             let animalCard1 = createCard();
             let animalCard2 = createCard();
@@ -230,7 +234,6 @@ SLIDER.addEventListener('animationend', (animationEvent) => {
             let animalCard2 = createCard();
             TMPLT_LEFT.appendChild(animalCard1);
             TMPLT_LEFT.appendChild(animalCard2);
-
         }else if(window.matchMedia("(min-width: 320px)").matches){
             let animalCard1 = createCard();
             TMPLT_LEFT.appendChild(animalCard1);
@@ -242,6 +245,11 @@ SLIDER.addEventListener('animationend', (animationEvent) => {
         let rightTemplate = TMPLT_RIGHT.innerHTML;
         TMPLT_ACTIVE.innerHTML = rightTemplate;
         TMPLT_RIGHT.innerHTML = '';
+        let arrToEvent = Array.from(TMPLT_ACTIVE.children);
+        arrToEvent.forEach(function(child) {
+            child.addEventListener('click', popup);
+            child.addEventListener('click', createModal)
+        })
         if(window.matchMedia("(min-width: 1280px)").matches){
             let animalCard1 = createCard();
             let animalCard2 = createCard();
@@ -265,3 +273,72 @@ SLIDER.addEventListener('animationend', (animationEvent) => {
 }
 )
 
+//popup
+function popup(e){
+    BODY.classList.toggle('body-hidden-slider');
+    log(BODY.classList);    
+    e.stopPropagation();
+    };
+
+
+BODY.addEventListener('click', (e) => {
+
+    if(BODY.classList.contains('body-hidden-slider') && e.target.closest('#modal') !== MODAL){
+        MODAL.style.display = 'none';
+        BODY.classList.toggle('body-hidden-slider');
+        MODAL.innerHTML = '';
+        }
+    }
+)
+
+function createModal(){
+    let pet = newCatalogue.find(pet => pet.name === `${this.getAttribute('data-name')}`);
+    
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let closeBtn = document.createElement('button');
+    closeBtn.classList.add('modal__close-btn');
+    closeBtn.addEventListener('click', () => {
+                MODAL.style.display = 'none';
+                BODY.classList.toggle('body-hidden-slider');
+                MODAL.innerHTML = '';
+        })
+    
+    let pic = document.createElement('img');
+    pic.src = `${pet.img}`;
+    pic.alt = `${pet.name}`;
+    pic.classList.add('modal__pic');
+    modal.appendChild(pic);
+
+    let discBlock = document.createElement('div');
+    discBlock.classList.add('discBlock')
+    
+    let name = document.createElement('h3');
+    name.innerText = `${pet.name}`;
+    name.classList.add('discBlock__name');
+    discBlock.appendChild(name);
+
+    let type = document.createElement('p');
+    type.innerHTML= `<p>${pet.type} - ${pet.breed}</p>`;
+    type.classList.add('discBlock__type');
+    discBlock.appendChild(type);
+
+    let disc = document.createElement('p');
+    disc.innerText= `${pet.description}`;
+    disc.classList.add('discBlock__disc');
+    discBlock.appendChild(disc);
+
+    let details = document.createElement('ul');
+    details.classList.add('discBlock__details');
+    details.innerHTML=`
+        <li class='discBlock__li'>Age: ${pet.age}</li>
+        <li class='discBlock__li'>Inoculations: ${pet.inoculations}</li>
+        <li class='discBlock__li'>Diseases: ${pet.diseases}</li>
+        <li class='discBlock__li'>Parasites: ${pet.parasites}</li>`;
+    discBlock.appendChild(details);
+    modal.appendChild(discBlock);
+    modal.appendChild(closeBtn);
+    MODAL.appendChild(modal);
+    MODAL.style.display = 'block';
+}
