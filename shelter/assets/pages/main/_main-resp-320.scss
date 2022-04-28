@@ -359,6 +359,40 @@
         animation-name: move-right;
         animation-duration: 1s;
     }
+    .modal-block{
+    width: 240px;
+    height: 341px;
+    }
+    .modal{
+        &__pic{
+            display: none;
+        }
+    }
+    
+    .discBlock{
+        margin: 10px 10px 10px 10px;
+        &__name{
+            font-size: 35px;
+            align-self: center;
+        }
+        &__type{
+            margin-top: 0px;
+            text-align: center;
+        }
+        &__details{
+            margin-left: 20px;
+            font-size: 13px;
+            line-height: 110%;
+        }
+        &__li{
+            margin-top: 5px;
+            &::marker{
+                color: #F1CDB3;
+            }
+        }
+        
+    }
+
 }
 .body-hidden{
     overflow: hidden;

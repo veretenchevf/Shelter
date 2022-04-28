@@ -6,10 +6,12 @@
             margin: 0 ;
             width: 100vw;
             padding: 30px 10px;
+            z-index: 4;
         }
         &__logo-block{
             margin-right: 39px;
             margin-left: auto;
+            z-index: 5;
         }
         &__nav-field{
                     width: 30px;
@@ -17,6 +19,7 @@
                     margin-right: 45px;
                     margin-top: 19px;
                     transition: 0.3s;
+                    z-index: 5;
                     &.open{
                         transform: rotate(90deg); 
                         transition: 0.3s;  
@@ -46,7 +49,7 @@
             right: -320px;
             height: 823px;
             top:0px;
-            z-index: -1;
+            z-index: 4;
             transition: 0.3s;
                 li {
                     margin: 20px 0;
@@ -62,9 +65,6 @@
                     transition: 0.3s;
                 }
         }
-    .active {
-        border-bottom: 3px solid #000000;
-    }
     }
     .our-friends {
         &__header {
@@ -74,11 +74,27 @@
             margin-bottom: 18px;
         }
         &__catalogue {
-            grid-template-columns: repeat(1, 1fr);
+            // grid-template-columns: repeat(1, 1fr);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            width: 98%;
+            height: 1365px;
+            // align-: center;
+            &__wrapper{
+                height: 1365px;
+            }
         }
         &__pagination-buttons{
             gap: 10px;
             margin-bottom: 44px;
+        }
+        &__animal-card {
+            height: 435px;
+            button{
+                margin-bottom: 30px;
+            }
         }
         &__animal-card:hover {
             box-shadow: none;
@@ -130,7 +146,55 @@
             }
         }
     }
-}
+    .modal-block{
+        width: 240px;
+        height: 341px;
+        }
+        .modal{
+            &__pic{
+                display: none;
+            }
+        }
+        
+        .discBlock{
+            margin: 10px 10px 10px 10px;
+            &__name{
+                font-size: 35px;
+                align-self: center;
+            }
+            &__type{
+                margin-top: 0px;
+                text-align: center;
+            }
+            &__details{
+                margin-left: 20px;
+                font-size: 13px;
+                line-height: 110%;
+            }
+            &__li{
+                margin-top: 5px;
+                &::marker{
+                    color: #F1CDB3;
+                }
+            }
+            
+        }
+    
+    }
+    .body-hidden{
+        overflow: hidden;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(41, 41, 41, 0.6);
+            z-index: 1;
+        }
+    }
+
 .footer-puppy {
     display: block;
     width: 260px;
