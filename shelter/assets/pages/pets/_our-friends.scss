@@ -25,7 +25,7 @@
         max-height: 930px;
         position: relative;
         top: 0;
-        transition: 0.5s all;
+        transition: 0.2s all ease-in-out;
         &__wrapper{
             overflow: hidden;
             width: 1200px;
@@ -44,20 +44,8 @@
         height: 52px;
         border: 2px solid #F1CDB3;
         border-radius: 100px;
-            &__prev, 
-            &__start {
-                color: #cdcdcd;
-                border: 2px solid #cdcdcd;
-            }
-        &__.active{
-            border: 2px solid #F1CDB3;
-            background-color: #F1CDB3;
-        }
-        .prev, 
-        .start {
-            color: #cdcdcd;
-            border: 2px solid #cdcdcd;
-        }
+        color: #000000;
+        border: 2px solid #cdcdcd;
     }
 }
 .our-friends__animal-card {
@@ -70,11 +58,11 @@
     align-items: center;
     &:hover {
         cursor: pointer;
-        box-shadow: 0px 1px 35px 5px;
-        transition: 0.5s;
         button{
             cursor: pointer;
             background:#F1CDB3;
+            transition: 0.5s;
+            transform: scale(1.2);
         }
     }
     p {
@@ -107,17 +95,15 @@
 button{
     background: none;
     cursor: pointer;
-    &.prev, 
-    &.start {
-        color: #cdcdcd;
-        border: 2px solid #cdcdcd;
-    }
     &[disabled]{
         cursor: not-allowed;
     }
     &:not([disabled]):hover{
         background-color: #F1CDB3;
         }
+    &:not([disabled]){
+        border: 2px solid #F1CDB3;
+    }
     &.active{
         border: 2px solid #F1CDB3;
         background-color: #F1CDB3;

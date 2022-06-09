@@ -118,7 +118,7 @@ nav .active {
   max-height: 930px;
   position: relative;
   top: 0;
-  transition: 0.5s all;
+  transition: 0.2s all ease-in-out;
 }
 .our-friends__catalogue__wrapper {
   overflow: hidden;
@@ -137,18 +137,7 @@ nav .active {
   height: 52px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
-}
-.our-friends__page-btn__prev, .our-friends__page-btn__start {
-  color: #cdcdcd;
-  border: 2px solid #cdcdcd;
-}
-.our-friends__page-btn__.active {
-  border: 2px solid #F1CDB3;
-  background-color: #F1CDB3;
-}
-.our-friends__page-btn .prev,
-.our-friends__page-btn .start {
-  color: #cdcdcd;
+  color: #000000;
   border: 2px solid #cdcdcd;
 }
 
@@ -163,12 +152,12 @@ nav .active {
 }
 .our-friends__animal-card:hover {
   cursor: pointer;
-  box-shadow: 0px 1px 35px 5px;
-  transition: 0.5s;
 }
 .our-friends__animal-card:hover button {
   cursor: pointer;
   background: #F1CDB3;
+  transition: 0.5s;
+  transform: scale(1.2);
 }
 .our-friends__animal-card p {
   margin: 30px auto;
@@ -201,15 +190,14 @@ button {
   background: none;
   cursor: pointer;
 }
-button.prev, button.start {
-  color: #cdcdcd;
-  border: 2px solid #cdcdcd;
-}
 button[disabled] {
   cursor: not-allowed;
 }
 button:not([disabled]):hover {
   background-color: #F1CDB3;
+}
+button:not([disabled]) {
+  border: 2px solid #F1CDB3;
 }
 button.active {
   border: 2px solid #F1CDB3;
@@ -352,9 +340,6 @@ div .footer__info a {
 div .footer__info img {
   width: 40px;
 }
-.footer__location {
-  margin-left: -19px;
-}
 .footer__location div img {
   width: 22px;
 }
@@ -404,10 +389,11 @@ div .footer__info img {
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 67px;
     row-gap: 57px;
     margin-top: 16px;
+    padding-left: 50px;
   }
   .footer__block div {
     width: 300px;
@@ -573,6 +559,7 @@ div .footer__info img {
     width: 100vw;
     margin: 0 auto;
     display: block;
+    padding-left: 0;
   }
   .footer__block div {
     width: 100vw;
@@ -599,9 +586,6 @@ div .footer__info img {
   }
   .footer__location {
     align-items: center;
-  }
-  .footer__location div:last-child {
-    margin-left: -15px;
   }
   .footer__location h2 {
     width: 270px;

@@ -74,14 +74,12 @@
             margin-bottom: 18px;
         }
         &__catalogue {
-            // grid-template-columns: repeat(1, 1fr);
             display: flex;
             flex-direction: column;
             align-items: center;
             
             width: 98%;
             height: 1365px;
-            // align-: center;
             &__wrapper{
                 height: 1365px;
             }
@@ -111,6 +109,7 @@
             width: 100vw;
             margin: 0 auto;
             display: block;
+            padding-left: 0;
             div{
                 width: 100vw;
                 max-width: 295px;
@@ -137,9 +136,6 @@
         }
         &__location {
             align-items: center;
-            div:last-child{
-                margin-left: -15px;
-            }
             h2 {
                 width: 270px;
                 margin-top: 0px;
